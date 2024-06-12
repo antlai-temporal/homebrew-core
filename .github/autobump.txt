@@ -809,6 +809,7 @@ fourstore
 fping
 fred
 freeciv
+freeglut
 freeipmi
 freerdp
 freeswitch
