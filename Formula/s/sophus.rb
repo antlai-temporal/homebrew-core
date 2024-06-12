@@ -1,8 +1,8 @@
 class Sophus < Formula
   desc "C++ implementation of Lie Groups using Eigen"
   homepage "https://strasdat.github.io/Sophus/latest/"
-  url "https://github.com/strasdat/Sophus/archive/refs/tags/1.22.10.tar.gz"
-  sha256 "eb1da440e6250c5efc7637a0611a5b8888875ce6ac22bf7ff6b6769bbc958082"
+  url "https://github.com/strasdat/Sophus/archive/refs/tags/1.24.6.tar.gz"
+  sha256 "0f3e46a98817f9841634c5ed85eda8597340e9e4b85b3d9ceb587ac56028f33a"
   license "MIT"
   version_scheme 1
   head "https://github.com/strasdat/Sophus.git", branch: "master"
@@ -23,16 +23,16 @@ class Sophus < Formula
                     "-DBUILD_SOPHUS_EXAMPLES=OFF"
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-    (pkgshare/"examples").install "examples/HelloSO3.cpp"
+    (pkgshare/"examples").install "examples/hello_so3.cpp"
   end
 
   test do
-    cp pkgshare/"examples/HelloSO3.cpp", testpath
+    cp pkgshare/"examples/hello_so3.cpp", testpath
     (testpath/"CMakeLists.txt").write <<~EOS
       cmake_minimum_required(VERSION 3.5)
       project(HelloSO3)
       find_package(Sophus REQUIRED)
-      add_executable(HelloSO3 HelloSO3.cpp)
+      add_executable(HelloSO3 hello_so3.cpp)
       target_link_libraries(HelloSO3 Sophus::Sophus)
     EOS
 

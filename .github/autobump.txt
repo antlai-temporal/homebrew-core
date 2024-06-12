@@ -2171,6 +2171,7 @@ sonar-scanner
 sonarqube
 sonarqube-lts
 sonobuoy
+sophus
 soplex
 sound-touch
 source-to-image
